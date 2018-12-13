@@ -1,20 +1,23 @@
 {
-  "name": "bfx-util-js",
+  "name": "bfx-svc-integration",
   "version": "0.0.5",
   "private": true,
   "description": "Bitfinex Service",
   "author": {
-    "name": "prdn",
-    "email": "paolo@bitfinex.com"
+    "name": "Robert",
+    "email": "robert@bitfinex.com"
   },
   "keywords": [
     "bitfinex"
   ],
   "dependencies": {
     "async": "^2.6.1",
+    "bfx-facs-api": "git+https://github.com/bitfinexcom/bfx-facs-api.git",
     "bfx-facs-base": "git+https://github.com/bitfinexcom/bfx-facs-base.git",
+    "bfx-facs-grc": "git+https://github.com/bitfinexcom/bfx-facs-grc.git",
     "bfx-facs-interval": "https://github.com/bitfinexcom/bfx-facs-interval.git",
     "bfx-svc-boot-js": "https://github.com/bitfinexcom/bfx-svc-boot-js.git",
+    "bfx-wrk-api": "git+https://github.com/bitfinexcom/bfx-wrk-api.git",
     "bfx-wrk-base": "git+https://github.com/bitfinexcom/bfx-wrk-base.git",
     "lodash": "^4.17.10",
     "yargs": "^12.0.2"
@@ -25,7 +28,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitfinexcom/bfx-util-js.git"
+    "url": "git+https://github.com/bitfinexcom/bfx-svc-integration.git"
   },
   "maintainers": [
     {
@@ -34,6 +37,7 @@
     }
   ],
   "devDependencies": {
+    "bfx-svc-test-helper": "git+https://github.com/bitfinexcom/bfx-svc-test-helper.git",
     "mocha": "^5.2.0",
     "standard": "^12.0.1"
   }

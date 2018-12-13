@@ -1,12 +1,31 @@
-# bfx-util
+# bfx-svc-integration
+
+Integration testsuite for core bfx-svc modules.
+
+Run with: `mocha`
 
 ## Setup
 
-The project inherits code from a base repository.
+Run two Grapes:
 
-All new repositories should inheritate from the closest parent: `bfx-util-net-js` inherits from `bfx-util-js`; `bfx-util-js` inheritates from `bfx-svc-js` (the root service repository)
+```
+grape --dp 20001 --aph 30001 --bn '127.0.0.1:20002'
+grape --dp 20002 --aph 40001 --bn '127.0.0.1:20001'
+```
 
-Add it with:
+```
+# Add base as upstream:
+git remote add upstream https://github.com/bitfinexcom/bfx-util-js
 
-* File names: parent is rightmost (i.e `api.net.util.wrk.js` : wrk>util>net>api)
-* Class names: parent is leftmost (i.e `WkrUtilNetApi`)
+# Configure service:
+cp config/common.json.example config/common.json
+cp config/facs/grc.config.json.example config/facs/grc.config.json
+cp config/apihandlers.svc.json.example config/apihandlers.svc.json
+```
+
+
+### Boot worker
+
+```
+node worker.js --env=development --wtype=wrk-svc-apihandlers-api --apiPort 1337
+```
